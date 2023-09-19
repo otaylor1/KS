@@ -2,7 +2,11 @@
 	--question-marker:         #7ad6c8;
 	--question-marker-lighter: #FFFFFF;
 
-	--yellow-color:       #ffcc4b;
+	--blue-color: 				#0081a9;
+	--green-color: 	 			#319391;
+	--pink-color: 				#fb3a68;
+	--purple-color:				#763fa1;
+	--yellow-color:     		#ffcc4b;
 
 	--button-enable-color:      #d19d00;
 	--button-active-color:      #76d5c6;
@@ -16,10 +20,19 @@ body {
 	font-size: 16px;
 	line-height: normal;
 	margin: 0;
-	background-image: url("../images/background.jpg");
+	background-image: url("../../Design%20Files/images/background.jpg");
 	background-size: cover;
 	overflow: hidden;
 	touch-action: none;
+}
+
+.h1-container{
+	padding: 2rem 2.5rem .5rem;
+}
+
+.h1-container h1{
+	padding: 2rem;
+	font-weight: 400;
 }
 
 /* Fix for iPad */
@@ -38,11 +51,19 @@ input, textarea {
 
 input, textarea {
 	width: 100%;
-	line-height: 1.4em;
 	background-attachment: local;
 	background-image: repeating-linear-gradient(transparent,transparent 42px,#FFFFFF80 43px,#FFFFFF80 46px,transparent 46px);
 	background-position-y: -7px;
 	overflow: hidden;
+}
+
+.background-image{
+	height:14rem;; 
+	background-size: cover;
+	background-position: center center;
+	margin: 2rem; 
+	outline: .4rem solid #ffffff; 
+	outline-offset: -0.4rem; 
 }
 
 /* ---- Layout ---- */
@@ -96,22 +117,34 @@ ul.buttons {
 .solid-blue-box,
 .solid-light-purple-box,
 .green-box {
-	position: absolute;
 	text-align: center;
 	letter-spacing: 0.015em;
 	border-radius: 8px;
 	color: #FFFFFF;
+	padding:1rem;
 }
 
 .solid-blue-box,
 .green-box {
 	font-size: 2em;
-	line-height: 0.75em;
 }
 
+.solid-light-purple-box textarea{
+	font-size: 1.8rem;
+	line-height: 1.75;
+}
+
+.solid-blue-box {
+	background-color: var(--blue-color);
+	margin: 4rem auto;
+	width: 45rem;
+}
 .solid-light-purple-box {
-	font-size: 2.5em;
-	line-height: 1.25em;
+	background-color: var(--purple-color);
+	font-size: 2.6rem;
+}
+.green-box {
+	background-color: var(--green-color);
 }
 
 .add-shadow {

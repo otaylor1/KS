@@ -9,7 +9,7 @@ global $dsjBaseOffset, $dsjImageBase;
 $dsjBaseOffset = "";
 
 /** @var string $dsjImageBase Location of images relative to page  */
-$dsjImageBase = $dsjBaseOffset . "images/";
+$dsjImageBase = $dsjBaseOffset . "../../Design%20Files/images/";
 
 /**
  * All pages should start off this this call!
@@ -33,14 +33,14 @@ function standardHeader() {
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<script type="text/javascript" src="<?php forceCacheBuster("js/digital-journal.js"); ?>"></script>
-	<link rel="stylesheet" href="<?php echo forceCacheBuster("css/digital-journal.css"); ?>">
-	<link rel="stylesheet" href="<?php echo forceCacheBuster("css/popover.css"); ?>">
-<?php if(file_exists("css/".$pageName.".css")) { ?>
-	<link rel="stylesheet" href="<?php forceCacheBuster("css/".$pageName.".css"); ?>">
+	<script type="text/javascript" src="<?php forceCacheBuster("../js/digital-journal.js"); ?>"></script>
+	<link rel="stylesheet" href="<?php echo forceCacheBuster("../css/digital-journal.css"); ?>">
+	<link rel="stylesheet" href="<?php echo forceCacheBuster("../css/popover.css"); ?>">
+<?php if(file_exists("../css/".$pageName.".css")) { ?>
+	<link rel="stylesheet" href="<?php forceCacheBuster("../css/".$pageName.".css"); ?>">
 <?php } ?>
-<?php if(file_exists(("js/".$pageName.".js"))) {?>
-	<script src="<?php forceCacheBuster("js/".$pageName.".js"); ?>"></script>
+<?php if(file_exists(("../js/".$pageName.".js"))) {?>
+	<script src="<?php forceCacheBuster("../js/".$pageName.".js"); ?>"></script>
 <?php } ?>
 	<script type="text/javascript">
 		var viewMode = "<?php echo $viewmode; ?>";
@@ -132,7 +132,7 @@ function writeUIButtons() {
  * @return void|string If $returnNotEcho is true, the content is returned as a string, otherwise it will use PHP's echo() to write the content
  */
 function vocabularyWord(string $word, string $partOfSpeech, string $definition, bool $returnNotEcho = false) {
-	$content = '<span class="vocabularyPopover" data-toggle="popover" data-placement="top" data-content="<div><b>' . ucfirst($word) . '</b>:&nbsp;&nbsp; <i>(' . $partOfSpeech . ')</i><br/>' . $definition . '</div>">' . $word . '</span>';
+	$content = '<span onmouseover="enablePopovers()" class="vocabularyPopover" data-toggle="popover" data-placement="top" data-content="<div><b>' . ucfirst($word) . '</b>:&nbsp;&nbsp; <i>(' . $partOfSpeech . ')</i><br/>' . $definition . '</div>">' . $word . '</span>';
 	if($returnNotEcho==false) {
 		echo $content;
 	} else {
